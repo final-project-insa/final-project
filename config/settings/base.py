@@ -77,6 +77,8 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "knl2.users",
+    "knl2.ticket",
+    "knl2.souvenir",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
