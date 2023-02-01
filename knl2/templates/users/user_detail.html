@@ -3,32 +3,67 @@
 
 {% block title %}User: {{ object.username }}{% endblock %}
 
+{% block css %}
+    <link href="{% static 'css/user.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
-<div class="container">
-
-  <div class="row">
-    <div class="col-sm-12">
-
-      <h2>{{ object.username }}</h2>
-      {% if object.name %}
-        <p>{{ object.name }}</p>
-      {% endif %}
+<section class="vh-100 profile" style="background-color: #f4f5f700;">
+    <div class="d-flex align-items-center h-100 profile-bg">
+      <div class="col col-lg-6 mb-4 mb-lg-0">
+        <div class="card mb-3 info-bg" >
+          <div class="row g-0">
+            <div class="col-md-4 gradient-custom text-center text-white profile-image"
+              style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+              <img src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
+                alt="Avatar" class="img-fluid my-5" style="width: 80px; border-radius: 40px;" />
+              <h2>< &nbsp;<i>{{ object.username }}</i>&nbsp; ></h2>
+              {% if object.name %}
+                <p>{{ object.name }}</p>
+              {% endif %}
+              <!-- <p>Web Designer</p> -->
+              <i class="bi bi-pencil-square"></i>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body p-4">
+                <h5>Information</h5>
+                <hr class="mt-0 mb-4">
+                <div class="row pt-1">
+                  <div class="col-6 mb-3">
+                    <h5>Email</h5>
+                    <p class="text-muted">{{ object.email }}</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h5>Téléphone</h5>
+                    <p class="text-muted">123 456 789</p>
+                  </div>
+                </div>
+                <h5>Plus d'informations
+                  <div class="float-lg-end justify-content-start">
+                    <a href="#!"><i class="bi bi-facebook"></i></a>
+                    <a href="#!"><i class="bi bi-twitter"></i></a>
+                    <a href="#!"><i class="bi bi-instagram"></i></a>
+                  </div>
+                </h5>
+                
+                <hr class="mt-0 mb-4">
+                {% if object == request.user %}
+                  <!-- Action buttons -->
+                  <div class="row button">
+                    <div class="col-sm-12">
+                      <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">My Info</a>
+                      <a class="btn btn-primary" href="{% url 'account_email' %}" role="button">E-Mail</a>
+                      <!-- <a class="btn btn-primary" href="{% url 'account_reset_password' %}" role="button">Change Password</a> -->
+                      <!-- Your Stuff: Custom user template urls -->
+                    </div>
+                  </div>
+                  <!-- End Action buttons -->
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
-{% if object == request.user %}
-<!-- Action buttons -->
-<div class="row">
-
-  <div class="col-sm-12">
-    <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">My Info</a>
-    <a class="btn btn-primary" href="{% url 'account_email' %}" role="button">E-Mail</a>
-    <!-- Your Stuff: Custom user template urls -->
-  </div>
-
-</div>
-<!-- End Action buttons -->
-{% endif %}
-
-</div>
+</section>
 {% endblock content %}

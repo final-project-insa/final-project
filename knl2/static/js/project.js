@@ -248,4 +248,11 @@
         });
     });
 
+    let checkboxRemember = select('#id_remember');
+    if (checkboxRemember) {
+        checkboxRemember.checked = true;
+    }
+
+    let nameOfUser = select('.form-label');
+    nameOfUser.innerHTML = "Nom de l'utilisateur";
 })()

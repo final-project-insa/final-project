@@ -1,16 +1,15 @@
 /* These styles are generated from project.css. */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksandwght@400;600&display=swap');
 /* Press Start 2P, Pacifico, Quicksand */
-@import url("reset.css");
 
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Poppins", sans-serif;
-  /* font-weight: lighter; */
+  font-family: "Open Sans", sans-serif;
   color: #444444;
+  padding: -50px;
 }
 
 a {
@@ -43,7 +42,7 @@ h6 {
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: #37517e;
+  background: #37787e;
 }
 
 #preloader:before {
@@ -51,7 +50,7 @@ h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #37517e;
+  border: 6px solid #37787e;
   border-top-color: #fff;
   border-bottom-color: #fff;
   border-radius: 50%;
@@ -125,18 +124,16 @@ h6 {
 
 #header.header-scrolled,
 #header.header-inner-pages {
-  background: rgba(40, 58, 90, 0.9);
+  background: rgba(40, 87, 90, 0.9);
 }
 
 #header .logo {
-  font-family: "Open Sans";
   font-size: 30px;
   margin: 0;
   padding: 0;
   line-height: 1;
-  font-weight: 520;
-  /* font-style: italic; */
-  letter-spacing: 4px;
+  font-weight: 500;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
@@ -343,7 +340,7 @@ h6 {
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #37517e;
+  color: #37787e;
 }
 
 .navbar-mobile a:hover,
@@ -355,7 +352,7 @@ h6 {
 .navbar-mobile .getstarted,
 .navbar-mobile .getstarted:focus {
   margin: 15px;
-  color: #37517e;
+  color: #37787e;
 }
 
 .navbar-mobile .dropdown ul {
@@ -398,7 +395,7 @@ h6 {
 #hero {
   width: 100%;
   height: 80vh;
-  background: #37517e;
+  background: #37787e;
 }
 
 #hero .container {
@@ -555,7 +552,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #37517e;
+  color: #37787e;
 }
 
 .section-title h2::before {
@@ -679,7 +676,7 @@ section {
 .why-us .content h3 {
   font-weight: 400;
   font-size: 34px;
-  color: #37517e;
+  color: #37787e;
 }
 
 .why-us .content h4 {
@@ -701,6 +698,7 @@ section {
 
 .why-us .accordion-list {
   padding: 0 100px 60px 100px;
+  margin-right: -70px;
 }
 
 .why-us .accordion-list ul {
@@ -770,7 +768,6 @@ section {
 }
 
 @media (max-width: 1024px) {
-
   .why-us .content,
   .why-us .accordion-list {
     padding-left: 0;
@@ -798,13 +795,30 @@ section {
   }
 }
 
+.why-us .img {
+  /* margin-left: -50px; */
+  margin: 0px auto;
+  width: 600px;
+  animation: up-down 1s ease-in-out infinite alternate-reverse both;
+}
+
 /*--------------------------------------------------------------
 # Skills
 --------------------------------------------------------------*/
+.skills {
+    /* margin-bottom: -60px; */
+}
+.skills img {
+  margin: 0px auto;
+  /* width: 95%; */
+  /* height: 90%; */
+  animation: up-down 1s ease-in-out infinite alternate-reverse both;
+}
+
 .skills .content h3 {
   font-weight: 700;
   font-size: 32px;
-  color: #37517e;
+  color: #37787e;
   font-family: "Poppins", sans-serif;
 }
 
@@ -827,6 +841,30 @@ section {
   margin-bottom: 0;
 }
 
+.skills .content .btn-learn-more {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 4px;
+  transition: 0.3s;
+  line-height: 1;
+  color: #47b2e4;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  margin-top: 20px;
+  margin-left: 245px;
+  border: 2px solid #47b2e4;
+}
+
+.skills .content .btn-learn-more:hover {
+  background: #47b2e4;
+  color: #fff;
+  text-decoration: none;
+}
+
 .skills .progress {
   height: 60px;
   display: block;
@@ -841,7 +879,7 @@ section {
   display: block;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-  color: #37517e;
+  color: #37787e;
 }
 
 .skills .progress .skill .val {
@@ -888,7 +926,7 @@ section {
 }
 
 .services .icon-box h4 a {
-  color: #37517e;
+  color: #37787e;
   transition: ease-in-out 0.3s;
 }
 
@@ -910,7 +948,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9)), url("../img/cta-bg.jpg") fixed center center;
+  background: linear-gradient(rgba(40, 87, 90, 0.9), rgba(40, 87, 90, 0.9)), url("../../static/images/img/cta-bg.jpg") fixed center center;
   background-size: cover;
   padding: 120px 0;
 }
@@ -992,6 +1030,7 @@ section {
 
 .portfolio .portfolio-item .portfolio-img {
   overflow: hidden;
+  border: 2px solid #37787e;
 }
 
 .portfolio .portfolio-item .portfolio-img img {
@@ -1006,7 +1045,7 @@ section {
   z-index: 3;
   right: 15px;
   transition: all 0.3s;
-  background: rgba(55, 81, 126, 0.8);
+  background: rgba(40, 87, 90, 0.8);
   padding: 10px 15px;
 }
 
@@ -1150,7 +1189,7 @@ section {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
-  color: #37517e;
+  color: #37787e;
 }
 
 .team .member span {
@@ -1196,7 +1235,7 @@ section {
 }
 
 .team .member .social a i {
-  color: #37517e;
+  color: #37787e;
   font-size: 16px;
   margin: 0 2px;
 }
@@ -1233,12 +1272,12 @@ section {
   font-weight: 500;
   margin-bottom: 15px;
   font-size: 20px;
-  color: #37517e;
+  color: #37787e;
 }
 
 .pricing h4 {
   font-size: 48px;
-  color: #37517e;
+  color: #37787e;
   font-weight: 400;
   font-family: "Jost", sans-serif;
   margin-bottom: 25px;
@@ -1400,7 +1439,7 @@ section {
 }
 
 .faq .faq-list a.collapsed {
-  color: #37517e;
+  color: #37787e;
   transition: 0.3s;
 }
 
@@ -1453,7 +1492,7 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #37517e;
+  color: #37787e;
 }
 
 .contact .info p {
@@ -1642,7 +1681,7 @@ section {
 .breadcrumbs h2 {
   font-size: 28px;
   font-weight: 600;
-  color: #37517e;
+  color: #37787e;
 }
 
 .breadcrumbs ol {
@@ -1670,7 +1709,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   font-size: 14px;
-  background: #37517e;
+  background: #37787e;
 }
 
 #footer .footer-newsletter {
@@ -1687,7 +1726,7 @@ section {
   padding: 0;
   line-height: 1;
   font-weight: 600;
-  color: #37517e;
+  color: #37787e;
 }
 
 #footer .footer-newsletter form {
@@ -1742,7 +1781,7 @@ section {
   line-height: 1;
   text-transform: uppercase;
   font-weight: 600;
-  color: #37517e;
+  color: #37787e;
 }
 
 #footer .footer-top .footer-contact p {
@@ -1756,7 +1795,7 @@ section {
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #37517e;
+  color: #37787e;
   position: relative;
   padding-bottom: 12px;
 }
@@ -1856,12 +1895,13 @@ section {
     padding-top: 4px;
   }
 }
+
 /*--------------------------------------------------------------
 # Test Section
 --------------------------------------------------------------*/
 #test {
   width: 100%;
   height: 80vh;
-  background: #37517e;
-  margin-bottom: 2000px;
+  background: #37787e;
+  margin-bottom: 100px;
 }
