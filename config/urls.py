@@ -4,18 +4,42 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
+from users.views import SendEmailView, CustomLoginView, CustomLogoutView, send_email
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework.authtoken.views import obtain_auth_token
+
+from django.views.static import serve
+from django.conf.urls import url
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path("about/", TemplateView.as_view(template_name="pages/about.html"), name="about"),
+    path("propos/", TemplateView.as_view(template_name="pages/propos.html"), name="propos"),
+    path("equipe/", TemplateView.as_view(template_name="pages/equipe.html"), name="equipe"),
+    path("competences/", TemplateView.as_view(template_name="pages/competences.html"), name="competences"),
+    # path("services/", include("ticket.urls"), namespace="services"),
+    # path("services/", include("ticket.urls", namespace="ticket")),
+    path("portfolio/", TemplateView.as_view(template_name="pages/portfolio-details.html"), name="portfolio-details"),
+    path("services/plan_developer/", TemplateView.as_view(template_name="services/plan_developer.html"), name="plan_developer"),
+    path("services/plan_entreprise/", TemplateView.as_view(template_name="services/plan_entreprise.html"), name="plan_entreprise"),
+    path("services/plan_base/", TemplateView.as_view(template_name="services/plan_base.html"), name="plan_base"),
+    path("payment/", TemplateView.as_view(template_name="services/payment_form.html"), name="payment"),
+    path("cinema/", TemplateView.as_view(template_name="loisirs/Movies Website/index.html"), name="cinema"),
+    path("ungine_gaming/", TemplateView.as_view(template_name="loisirs/Unigine/index.html"), name="ungine_gaming"),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path("users/", include("knl2.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', CustomLogoutView.as_view(), name='logout'),
+    path("send_email/", SendEmailView, name="send_email"),
+    path("send_contact/", send_email, name="send_contact"),
+    # path("accounts/email/", account_email, name="account_email")
+    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # API URLS
