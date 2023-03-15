@@ -1,8 +1,13 @@
 {% extends "account/base.html" %}
+{% load static %}
 
 {% load i18n %}
 
 {% block head_title %}{% translate "Verify Your E-mail Address" %}{% endblock %}
+
+{% block css %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+{% endblock %}
 
 {% block inner %}
     <h1>{% translate "Verify Your E-mail Address" %}</h1>

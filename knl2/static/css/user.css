@@ -1,0 +1,131 @@
+@import url("reset.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* min-height: 100vh; */
+    /* padding: 100px;
+    padding-bottom: 50px; */
+    /* background: linear-gradient(to right, #8e8ed1, #e608ba); */
+    background: linear-gradient(to right, #37787e, #37787e);
+    /* text-align: center; */
+    align-items: center;
+    justify-content: center;
+}
+
+h5 a {
+    margin-left: 12px;
+}
+
+.profile .btn {
+    background: black;
+    color: white;
+    padding: 1rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .5s;
+    width: 200px;
+    margin: 0px 20px 0px 125px;
+}
+
+.profile .btn:hover,
+.profile1 .btn:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+}
+
+.profile .button a {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile input[type="text"], .profile input[type="password"],
+.profile1 input[type="text"], .profile1 input[type="password"] {
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, .3);
+    padding: 1rem 1.5rem;
+    padding-left: calc(1rem * 15);
+    border-radius: 100px;
+    width: 100%;
+    transition: background .5s;
+}
+
+.profile input:focus,
+.profile1 input:focus {
+    background: white;
+}
+
+#div_id_name {
+    position: relative;
+    margin: 20px 0px;
+}
+
+#div_id_name label {
+    position: absolute;
+    font-weight: 550;
+    font-style: italic;
+    margin: 16px 0px 0px 35px;
+}
+
+/* -------------------------- User Details --------------------------- */
+.gradient-custom {
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, rgb(101, 236, 246), rgb(24, 112, 119));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, rgba(144, 217, 220, 0.526), rgb(34, 152, 136))
+}
+.info-bg, .info-bg1 {
+    background: rgba(255, 255, 255, .5);
+    border-radius: 15px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.info-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.398);
+    transform: rotate(-6deg);
+    border-radius: 15px;
+    z-index: -1;
+}
+
+.profile .profile-bg {
+    width: 2500px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.profile {
+    margin: -50px 0px -120px 132px;
+}
+/* -------------------- User Form ------------------- */
+.profile-bg1, .info-bg1 {
+    margin: 0 auto;
+    width: 1400px;
+}
+
+.profile1 {
+    margin: -140px 0px -187px 0px;
+}
+
+.info-bg1 {
+    padding: 30px 70px;
+}
+
+.profile1 .btn {
+    background: black;
+    color: white;
+    padding: 1rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .5s;
+    width: 200px;
+    margin: 15px 20px 0px 525px;
+}
