@@ -299,3 +299,9 @@ SPECTACULAR_SETTINGS = {
 }
 # Your stuff...
 # ------------------------------------------------------------------------------
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+from django.contrib.messages import constants as message_constants
+MESSAGE_LEVEL = message_constants.SUCCESS
+MESSAGE_LEVEL = 0  # DEBUG
