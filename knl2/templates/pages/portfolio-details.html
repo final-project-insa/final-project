@@ -1,0 +1,340 @@
+{% load static i18n %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% block title %}Propos de nous{% endblock title %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="final project">
+        <meta name="author" content="Emmanuelle Ngan Ha NGUYEN LE">
+
+        <!-- Bootstrap Icon -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <!-- Your stuff: Third-party CSS libraries go here -->
+        <!-- Favicons -->
+        <link href="{% static 'img/apple-touch-icon.png}" rel="apple-touch-icon">
+        <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/bootstrap-icons/bootstrap-icon.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+        <!-- This file stores project-specific CSS -->
+        <link href="{% static 'css/project.css' %}" rel="stylesheet">
+        {% block css %}
+
+        {% endblock %}
+        <!-- Le javascript
+        ================================================== -->
+        {# Placed at the top of the document so pages load faster with defer #}
+        <!-- Bootstrap JS -->
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- Your stuff: Third-party javascript libraries go here -->
+        <!-- Vendor JS Files -->
+        <script src="{% static 'vendor/aos/aos.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+        <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+        <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
+        <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+        <!-- Template Main JS File -->
+        <!-- <script src="assets/js/main.js"></script> -->
+        <!-- place project specific Javascript in this file -->
+        <script defer src="{% static 'js/project.js' %}"></script>
+        {% block javascript %}
+        
+        {% endblock javascript %}
+    </head>
+
+    <body>
+        <header id="header" class="fixed-top header-inner-pages">
+          <div class="container d-flex align-items-center">
+            <h1 class="logo text me-auto"><a href="{% url 'home' %}">KiFiSo</a></h1>
+            <!-- <a href="{% url 'home' %}" class="logo me-auto"><img src="{% static 'images/logo/logo.png' %}" alt="" class="img-fluid"></a> -->
+            
+            <!-- Uncomment below if you prefer to use an image logo -->
+      
+            <nav id="navbar" class="navbar">
+              <ul>
+                <!-- <li><a class="nav-link scrollto active" href="{% url 'home' %}">Accueil<span class="visually-hidden">(current)</span></a></li>
+                <li><a class="nav-link scrollto" href="{% url 'about' %}">Propos</a></li> -->
+                <li><a class="nav-link scrollto active" href="#hero">Accueil</a></li>
+                <li><a class="nav-link scrollto" href="#about">Propos</a></li>
+                <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+                <li><a class="nav-link scrollto" href="#team">Equipe</a></li>
+                <li class="dropdown"><a href="#"><span>Blog</span> <i class="bi bi-chevron-down"></i></a>
+                  <ul>
+                    <li><a href="https://www.uphf.fr/lamih/membres/ratli_mustapha">Notre tuteur - M.RALTI</a></li>
+                    <li class="dropdown"><a href="https://www.insa-hautsdefrance.fr/"><span>INSA Hauts-de-France</span> <i class="bi bi-chevron-right"></i></a>
+                      <ul>
+                        <li><a href="https://www.insa-hautsdefrance.fr/formation/domaines-formation">Formation</a></li>
+                        <li><a href="https://www.insa-hautsdefrance.fr/international/linternational-linsa-hauts-france">International</a></li>
+                        <li><a href="https://www.uphf.fr/vie-campus/vie-universitaire">Vie des campus</a></li>
+                        <li><a href="https://bu.uphf.fr/opac/.do">Bibliothèquie</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="{% url 'cinema' %}">Cinéma</a></li>
+                    <li><a href="{% url 'ungine_gaming' %}">Gaming Unigine</a></li>
+                  </ul>
+                </li>
+                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
+                {% if request.user.is_authenticated %}
+                    <li>
+                        {# URL provided by django-allauth/account/urls.py #}
+                        <a class="getstarted scrollto" href="{% url 'users:detail' request.user.username  %}">{% translate "Mon Profile" %}</a>
+                    </li>
+                    <li><a class="getstarted scrollto" href="{% url 'logout' %}" onclick="return confirm('Êtes-vous sûr(e) de vouloir vous déconnecter?')">{% translate "Se déconnecter" %}</a></li>
+                {% else %}
+                    {% if ACCOUNT_ALLOW_REGISTRATION %}
+                        <li>
+                            {# URL provided by django-allauth/account/urls.py #}
+                            <a id="sign-up-link" class="getstarted scrollto" href="{% url 'account_signup' %}">{% translate "S'inscrire" %}</a>
+                        </li>
+                    {% endif %}
+                    <li>
+                        {# URL provided by django-allauth/account/urls.py #}
+                        <a id="log-in-link" class="getstarted scrollto" href="{% url 'login' %}">{% translate "Se connecter" %}</a>
+                    </li>
+                {% endif %}
+                <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
+              </ul>
+              <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+          </div>
+        </header><!-- End Header -->
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Notifications</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                    </div>
+
+                    <div class="modal-body">
+                    {% if messages %}
+                        {% for message in messages %}
+                        <div class="alert alert-dismissible {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                            {{ message }}
+                            <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button> -->
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {% block content %}
+            <!-- Use this document as a way to quick start any new project. -->
+            <main id="main">
+                <!-- ======= Breadcrumbs ======= -->
+                <section id="breadcrumbs" class="breadcrumbs">
+                <div class="container">
+                    <ol>
+                    <li><a href="{% url 'home' %}">Accueil</a></li>
+                    <li>Détails portfolio</li>
+                    </ol>
+                    <h2>Détails portfolio</h2>
+                </div>
+                </section><!-- Breadcrumbs Finis -->
+        
+                <section id="portfolio-details" class="portfolio-details">
+                    <div class="container">
+                      <div class="row gy-4">
+                        <div class="col-lg-8">
+                            <div class="portfolio-details-slider swiper">
+                                <div class="swiper-wrapper align-items-center">
+                                    <div class="swiper-slide">
+                                        <img src="https://images.unsplash.com/photo-1504610926078-a1611febcad3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
+                                    </div>
+                    
+                                    <div class="swiper-slide">
+                                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1026&q=80" alt="">
+                                    </div>
+                    
+                                    <div class="swiper-slide">
+                                        <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1120&q=80" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+              
+                        <div class="col-lg-4">
+                            <div class="portfolio-info">
+                                <h3>Informations sur le projet</h3>
+                                <ul>
+                                <li><strong>Catégorie</strong>: E-commerce</li>
+                                <li><strong>Client</strong>: La boutique du luxe</li>
+                                <li><strong>Date du projet</strong>: Janvier 2022 - Mai 2022</li>
+                                <li><strong>URL du projet</strong>: <a href="#">www.laboutiqueduluxe.com</a></li>
+                                </ul>
+                            </div>
+                            <div class="portfolio-description">
+                                <h2>Ceci est un exemple de détail de portfolio</h2>
+                                <p>
+                                    La boutique du luxe est un magasin physique spécialisé dans la vente de produits haut de gamme. Elle a fait appel à nous pour créer son site web de vente en ligne afin de toucher un public plus large. Nous avons travaillé en étroite collaboration avec le client pour créer un site web élégant et convivial, reflétant l'image de marque de La boutique du luxe. Nous avons utilisé une plateforme de commerce électronique pour développer le site web et avons intégré des fonctionnalités telles que la gestion des stocks, la gestion des commandes et la sécurité des paiements en ligne. Le site web a été lancé en mai 2022 et a connu un grand succès auprès des clients de La boutique du luxe.
+                                </p>
+                            </div>
+                            </div>
+                      </div>
+                    </div>
+                </section><!-- End Portfolio Details Section -->
+            </main>
+        {% endblock content %}
+
+        {% block footer %}
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="footer-newsletter">
+            <div class="container">
+                <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <h4>Rejoignez Notre Newsletter</h4>
+                    <p>Nous vous informerons dès que possible des informations pertinentes de KiFiSo</p>
+                    <form method="post" action="{% url 'send_email' %}" >
+                        {% csrf_token %}
+                        <input type="email" name="email_news"><input type="submit" value="S'abonner">
+                    </form>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>KiFiSo</h3>
+                        <p>
+                            Voirie Communale<br>
+                            INSA Hauts-de-France / UPHF<br>
+                            Aulnoy-Lez-Valenciennes<br>
+                            59300 France <br><br>
+                            <strong>Phone:</strong> (+33) 7 99 88 22 79<br>
+                            <strong>Email:</strong>
+                            <a href = "mailto:kifiso-insa@gmail.com?subject = Feedback & body = Message" style="color: #444444">
+                                kifiso-insa@gmail.com
+                            </a><br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Liens Utiles</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Accueil</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">A propos de nous</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Termes de service</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Politique de confidentialité</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Nos Services</h4>
+                        <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Conception Web</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Développement web</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Gestion du Produit</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Conception Graphique</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Nos Réseaux Sociaux</h4>
+                        <p>Veuillez nous contacter si vous avez besoin de conseils sur les services</p>
+                        <div class="social-links mt-3">
+                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                &copy; Copyright <strong><span>KiFiSo</span></strong>. Tous droits réservés
+            </div>
+            <div class="credits">
+                Dessinée par <a href="#">&nbsp; KiFiSo - INSA</a>
+            </div>
+            </div>
+        </footer><!-- End Footer -->
+        {% endblock footer%}
+        
+        <!-- Back to top -->
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        
+        {% block modal %}{% endblock modal %}
+
+        {% block inline_javascript %}
+            {% comment %}
+                Script tags with only code, no src (defer by default). To run
+                with a "defer" so that you run inline code:
+                <script>
+                    window.addEventListener('DOMContentLoaded', () => {
+                        // Get a reference to the email form
+                        const emailForm = document.getElementById('email-form');
+
+                        // If the form exists
+                        if (emailForm) {
+                            // Add an event listener to the form submit event
+                            emailForm.addEventListener('submit', function(e) {
+                                console.log('Form submitted');
+                                // Prevent the form from being submitted normally
+                                e.preventDefault();
+
+                                // Send the form data using an AJAX request
+                                fetch(emailForm.action, {
+                                    method: emailForm.method,
+                                    body: new FormData(emailForm)
+                                })
+                                .then(response => {
+                                    console.log(response);
+                                    if (response.ok) { // If the request was successful
+                                        // Hide the form
+                                        emailForm.style.display = 'none';
+
+                                        // Show the modal
+                                        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
+                                        myModal.show();
+                                        console.log(message);
+                                    }
+                                })
+                                .catch(error => console.error(error));
+                            });
+                        }
+                    });
+                </script>
+            {% endcomment %}
+        {% endblock inline_javascript %}
+        <div id="preloader"></div>
+    </body>
+</html>

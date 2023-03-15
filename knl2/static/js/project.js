@@ -253,6 +253,12 @@
         checkboxRemember.checked = true;
     }
 
-    let nameOfUser = select('.form-label');
+    let nameOfUser = select('#div_id_name .form-label');
     nameOfUser.innerHTML = "Nom de l'utilisateur";
+
+    let emailOfUser = select('#div_id_email .form-label');
+    emailOfUser.innerHTML = "Adresse e-mail";
+
+    let nameOfButtonAdd = select('button[name="action_add"]');
+    nameOfButtonAdd.innerHTML = "Ajouter E-mail";
 })()
