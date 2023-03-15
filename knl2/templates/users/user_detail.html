@@ -10,19 +10,19 @@
 {% block content %}
 <section class="vh-100 profile" style="background-color: #f4f5f700;">
     <div class="d-flex align-items-center h-100 profile-bg">
-      <div class="col col-lg-6 mb-4 mb-lg-0">
-        <div class="card mb-3 info-bg" >
+      <!-- <div class="col col-lg-6 mb-4 mb-lg-0"> -->
+        <div class="info-bg" >
           <div class="row g-0">
             <div class="col-md-4 gradient-custom text-center text-white profile-image"
               style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-              <img src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
-                alt="Avatar" class="img-fluid my-5" style="width: 80px; border-radius: 40px;" />
+              <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e72e6ff5-b402-4e80-9707-58633d974d36/deyo1zi-3ae4c44f-c6bd-4146-b694-10426a009f44.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2U3MmU2ZmY1LWI0MDItNGU4MC05NzA3LTU4NjMzZDk3NGQzNlwvZGV5bzF6aS0zYWU0YzQ0Zi1jNmJkLTQxNDYtYjY5NC0xMDQyNmEwMDlmNDQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.R1Eh7kSCZRTmQl-_cESP1zXEW30_iWKVLFACyg4zkmQ"
+                alt="Avatar" class="img-fluid my-4" style="width: 100px; border-radius: 50px;" />
               <h2>< &nbsp;<i>{{ object.username }}</i>&nbsp; ></h2>
               {% if object.name %}
                 <p>{{ object.name }}</p>
               {% endif %}
               <!-- <p>Web Designer</p> -->
-              <i class="bi bi-pencil-square"></i>
+              <a href="{% url 'users:update' %}"><i class="bi bi-pencil-square"></i></a>
             </div>
             <div class="col-md-8">
               <div class="card-body p-4">
@@ -40,9 +40,9 @@
                 </div>
                 <h5>Plus d'informations
                   <div class="float-lg-end justify-content-start">
-                    <a href="#!"><i class="bi bi-facebook"></i></a>
-                    <a href="#!"><i class="bi bi-twitter"></i></a>
-                    <a href="#!"><i class="bi bi-instagram"></i></a>
+                    <a href="#!" class="social-network"><i class="bi bi-facebook"></i></a>
+                    <a href="#!" class="social-network"><i class="bi bi-twitter"></i></a>
+                    <a href="#!" class="social-network"><i class="bi bi-instagram"></i></a>
                   </div>
                 </h5>
                 
@@ -51,7 +51,7 @@
                   <!-- Action buttons -->
                   <div class="row button">
                     <div class="col-sm-12">
-                      <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">My Info</a>
+                      <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">Mes infos</a>
                       <a class="btn btn-primary" href="{% url 'account_email' %}" role="button">E-Mail</a>
                       <!-- <a class="btn btn-primary" href="{% url 'account_reset_password' %}" role="button">Change Password</a> -->
                       <!-- Your Stuff: Custom user template urls -->
@@ -63,7 +63,7 @@
             </div>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
 </section>
 {% endblock content %}

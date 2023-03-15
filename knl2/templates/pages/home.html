@@ -77,7 +77,7 @@
                         <ul>
                             <li><i class="ri-check-double-line"></i> Voici une idée du projet final en 3ème année</li>
                             <li><i class="ri-check-double-line"></i> Fournir des solutions de conception pour les sites Web des entreprises</li>
-                            <li><i class="ri-check-double-line"></i> Sous la direction principale de professeur M. Gralti…</li>
+                            <li><i class="ri-check-double-line"></i> Sous la direction principale de professeur M. Mustapha Ralti…</li>
                         </ul>
                     </div>
                         <div class="col-lg-6 pt-4 pt-lg-0">
@@ -86,7 +86,7 @@
                             domaines différents, en plus de pouvoir connecter nos talentueux ingénieurs avec nos clients. Nous nous engageons 
                             à fournir le meilleur service de qualité pour répondre aux besoins de nos clients.
                         </p>
-                        <a href="#" class="btn-learn-more">En Savoir Plus</a>
+                        <div class="button"><a href="{% url 'propos' %}" class="btn-learn-more">En Savoir Plus</a></div>
                     </div>
                 </div>
             </div>
@@ -185,7 +185,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="btn-learn-more">En Savoir Plus</a>
+                    <div class="button"><a href="{% url 'competences' %}" class="btn-learn-more">En Savoir Plus</a></div>
                 </div>
             </div>
             </div>
@@ -255,111 +255,443 @@
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
                     <h2>Portfolio</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <p>Bienvenue sur notre portfolio de conception et de construction de sites Web ! Nous sommes fiers de notre créativité et de notre capacité à comprendre les besoins de nos clients pour offrir une expérience utilisateur exceptionnelle et un design attractif.</p>
                 </div>
-        
+
                 <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                    <li data-filter="*" class="filter-active">All</li>
+                    <li data-filter="*" class="filter-active">Tous</li>
                     <li data-filter=".filter-web">Web</li>
-                    <li data-filter=".filter-card">Card</li>
-                    <li data-filter=".filter-app">App</li>
+                    <li data-filter=".filter-card">Carte</li>
+                    <li data-filter=".filter-app">Appli</li>
                 </ul>
-        
+
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-img"><img src="{% static 'images/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt=""></div>
                     <div class="portfolio-info">
-                        <h4>App 1</h4>
-                        <p>App</p>
+                        <h4>Appli 1</h4>
+                        <p>Appli</p>
                         <a href="{% static 'images/img/portfolio/portfolio-1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-fullscreen"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                     </div>
                     </div>
-        
+
                     <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                     <div class="portfolio-img"><img src="{% static 'images/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt=""></div>
                     <div class="portfolio-info">
                         <h4>Web 1</h4>
                         <p>Web</p>
                         <a href="{% static 'images/img/portfolio/portfolio-2.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-fullscreen"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                     </div>
                     </div>
-        
+
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-img"><img src="{% static 'images/img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt=""></div>
                     <div class="portfolio-info">
-                        <h4>App 2</h4>
-                        <p>App</p>
+                        <h4>Appli 2</h4>
+                        <p>Appli</p>
                         <a href="{% static 'images/img/portfolio/portfolio-3.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-fullscreen"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                     </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-img"><img src="{% static 'images/img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt=""></div>
                     <div class="portfolio-info">
-                        <h4>App 3</h4>
-                        <p>App</p>
+                        <h4>Appli 3</h4>
+                        <p>Appli</p>
                         <a href="{% static 'images/img/portfolio/portfolio-6.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-fullscreen"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                     </div>
                     </div>
-        
+
                     <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                     <div class="portfolio-img"><img src="{% static 'images/img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt=""></div>
                     <div class="portfolio-info">
-                        <h4>Card 2</h4>
-                        <p>Card</p>
+                        <h4>Carte 2</h4>
+                        <p>Carte</p>
                         <a href="{% static 'images/img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-fullscreen"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                     </div>
                     </div>
-        
+
                     <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                     <div class="portfolio-img"><img src="{% static 'images/img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt=""></div>
                     <div class="portfolio-info">
                         <h4>Web 2</h4>
                         <p>Web</p>
                         <a href="{% static 'images/img/portfolio/portfolio-5.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-fullscreen"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                     </div>
                     </div>
-        
+
                     <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                     <div class="portfolio-img"><img src="{% static 'images/img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt=""></div>
                     <div class="portfolio-info">
-                        <h4>Card 1</h4>
-                        <p>Card</p>
+                        <h4>Carte 1</h4>
+                        <p>Carte</p>
                         <a href="{% static 'images/img/portfolio/portfolio-7.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-fullscreen"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                     </div>
                     </div>
-        
+
                     <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                     <div class="portfolio-img"><img src="{% static 'images/img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt=""></div>
                     <div class="portfolio-info">
-                        <h4>Card 3</h4>
-                        <p>Card</p>
+                        <h4>Carte 3</h4>
+                        <p>Carte</p>
                         <a href="{% static 'images/img/portfolio/portfolio-8.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-fullscreen"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                     </div>
                     </div>
-        
+
                     <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                     <div class="portfolio-img"><img src="{% static 'images/img/portfolio/portfolio-9.jpg' %}" class="img-fluid" alt=""></div>
                     <div class="portfolio-info">
                         <h4>Web 3</h4>
                         <p>Web</p>
                         <a href="{% static 'images/img/portfolio/portfolio-9.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-fullscreen"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                     </div>
                     </div>
                 </div>
             </div>
         </section><!-- Section Portfolio Finis -->
 
+        <!-- ======= Section Equipe ======= -->
+        <section id="team" class="team section-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Équipe</h2>
+                    <p>Notre équipe est composée de professionnels passionnés par leur travail, engagés à fournir des solutions de qualité supérieure à nos clients. Nous sommes déterminés à offrir des résultats exceptionnels en travaillant ensemble dans un environnement de collaboration et de respect mutuel.</p>
+                </div>
 
+                <div class="row">
+                    <div class="col-lg-6">
+                    <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="pic"><img src="{% static 'images/img/team/team-2.jpg' %}" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                        <h4>Mustapha RALTI</h4>
+                        <span>Professeur / Tuteur de projet</span>
+                        <p>Tuteur pédagogique, mentor et examinateur de notre projets</p>
+                        <div class="social">
+                            <a href=""><i class="ri-twitter-fill"></i></a>
+                            <a href=""><i class="ri-facebook-fill"></i></a>
+                            <a href=""><i class="ri-instagram-fill"></i></a>
+                            <a href=""><i class="ri-linkedin-box-fill"></i></a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                    <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="pic"><img src="{% static 'images/img/team/kid.jpg' %}" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                        <h4>Emmanuelle Ngan Ha NGUYEN</h4>
+                        <span>Chef de projet / Développeur full-stack / Ingénieur IA</span>
+                        <p>Responsable de la gestion projet, de l'assurance de la qualité</p>
+                        <div class="social">
+                            <a href=""><i class="ri-twitter-fill"></i></a>
+                            <a href=""><i class="ri-facebook-fill"></i></a>
+                            <a href=""><i class="ri-instagram-fill"></i></a>
+                            <a href=""><i class="ri-linkedin-box-fill"></i></a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="pic"><img src="{% static 'images/img/team/fisal.jpg' %}" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                        <h4>Fisal RABHA</h4>
+                        <span>Cyber sécurité / Développeur front-end</span>
+                        <p>Responsable de la sécurité et du développement front-end</p>
+                        <div class="social">
+                            <a href=""><i class="ri-twitter-fill"></i></a>
+                            <a href=""><i class="ri-facebook-fill"></i></a>
+                            <a href=""><i class="ri-instagram-fill"></i></a>
+                            <a href=""><i class="ri-linkedin-box-fill"></i></a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="pic"><img src="{% static 'images/img/team/sofian.jpg' %}" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                        <h4>Sofian BARANT</h4>
+                        <span>Développer full-stack / Designer</span>
+                        <p>Responsable de la conception et du développement full-stack</p>
+                        <div class="social">
+                            <a href=""><i class="ri-twitter-fill"></i></a>
+                            <a href=""><i class="ri-facebook-fill"></i></a>
+                            <a href=""><i class="ri-instagram-fill"></i></a>
+                            <a href=""><i class="ri-linkedin-box-fill"></i></a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="button"><a href="{% url 'equipe' %}" class="btn-learn-more">En Savoir Plus</a></div>
+            </div>
+        </section><!-- Section Equipe Finis -->
+
+        <!-- ======= Section Prix de services ======= -->
+        <section id="pricing" class="pricing">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Prix</h2>
+                    <p>
+                        Nous proposons une gamme de plans de service pour aider nos clients à accéder plus facilement aux solutions de commerce en ligne. 
+                        De plans gratuits à des plans de service haut de gamme, nous offrons une variété de plans pour répondre aux besoins de différents clients. 
+                        Chaque plan de service que nous proposons est conçu pour fournir des fonctionnalités et des fonctions différentes, permettant aux clients de personnaliser et de gérer leur site web plus facilement. 
+                        Avec d'excellentes fonctionnalités de sécurité, de rapports et de support client, nos plans de service sont le choix parfait pour les entreprises en ligne cherchant à renforcer leur compétitivité.
+                    </p>
+                </div>
+        
+                <div class="row">
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="box">
+                        <h3>Plan de Base</h3>
+                        <h4><sup>€</sup>599<span>par service</span></h4>
+                        <ul>
+                            <li><i class="bx bx-check"></i> Proposer les conseils</li>
+                            <li><i class="bx bx-check"></i> Inclure des fonctionnalités limitées</li>
+                            <li class="na"><i class="bx bx-x"></i> <span>Une bande passante rapide et sans publicités</span></li>
+                            <li class="na"><i class="bx bx-x"></i> <span>Accéder à une version complète à l'API du service</span></li>
+                            <li class="na"><i class="bx bx-x"></i> <span>Les rapports détaillés et les fonctionnalités de collaboration</span></li>
+                        </ul>
+                        {% if request.user.is_authenticated %}
+                            <a href="{% url 'plan_base' %}" class="buy-btn">Démarrer</a>
+                        {% else %}
+                            <button class="buy-btn" onclick="redirectToLogin()">Démarrer</button>
+                            <script>
+                                function redirectToLogin() {
+                                    window.location.href = "{% url 'login' %}";
+                                }
+                            </script>
+                        {% endif %}
+                    </div>
+                    </div>
+        
+                    <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="box featured">
+                        <h3>Plan Entreprise</h3>
+                        <h4><sup>€</sup>1999<span>par service</span></h4>
+                        <ul>
+                            <li><i class="bx bx-check"></i> Proposer les conseils</li>
+                            <li><i class="bx bx-check"></i> Inclure des fonctionnalités illimitées</li>
+                            <li><i class="bx bx-check"></i> Une bande passante rapide et sans publicités</li>
+                            <li><i class="bx bx-check"></i> Accéder à une version complète à l'API du service</li>
+                            <li><i class="bx bx-check"></i> Les rapports détaillés et les fonctionnalités de collaboration</li>
+                        </ul>
+                        {% if request.user.is_authenticated %}
+                            <a href="{% url 'plan_entreprise' %}" class="buy-btn">Démarrer</a>
+                        {% else %}
+                            <button class="buy-btn" onclick="redirectToLogin()">Démarrer</button>
+                            <script>
+                                function redirectToLogin() {
+                                    window.location.href = "{% url 'login' %}";
+                                }
+                            </script>
+                        {% endif %}
+                    </div>
+                    </div>
+        
+                    <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                    <div class="box">
+                        <h3>Plan Développeur</h3>
+                        <h4><sup>€</sup>1499<span>par service</span></h4>
+                        <ul>
+                            <li><i class="bx bx-check"></i> Proposer les conseils</li>
+                            <li><i class="bx bx-check"></i> Inclure des fonctionnalités illimitées</li>
+                            <li><i class="bx bx-check"></i> Une bande passante rapide et sans publicités</li>
+                            <li><i class="bx bx-check"></i> Accéder à une version complète à l'API du service</li>
+                            <li class="na"><i class="bx bx-x"></i> <span>Les rapports détaillés et les fonctionnalités de collaboration</span></li>
+                        </ul>
+                        {% if request.user.is_authenticated %}
+                            <a href="{% url 'plan_developer' %}" class="buy-btn">Démarrer</a>
+                        {% else %}
+                            <button class="buy-btn" onclick="redirectToLogin()">Démarrer</button>
+                            <script>
+                                function redirectToLogin() {
+                                    window.location.href = "{% url 'login' %}";
+                                }
+                            </script>
+                        {% endif %}
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Section Prix Finis -->
+
+        <!-- ======= Section FAQ ======= -->
+        <section id="faq" class="faq section-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Foire Aux Questions</h2>
+                    <p>Quelques questions que les clients posent fréquemment sur les services de KiFiSo. Si vous avez d'autres questions, n'hésitez pas à nous contacter via le formulaire de contact ci-dessous, c'est un plaisir de vous accompagner sur de nouveaux projets.</p>
+                </div>
+        
+                <div class="faq-list">
+                <ul>
+                    <li data-aos="fade-up" data-aos-delay="100">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Quels types de sites web pouvez-vous concevoir et construire ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                        <p>
+                            Nous pouvons concevoir et construire des sites web pour diverses industries et domaines, notamment des sites de commerce électronique, des sites d'entreprise, des sites de portfolio, des sites de blog, des sites de médias sociaux et bien plus encore. Nous sommes en mesure de répondre à tous vos besoins en matière de conception et de construction de sites web.
+                        </p>
+                        </div>
+                    </li>
+        
+                    <li data-aos="fade-up" data-aos-delay="200">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Quel est votre processus de conception et de construction de sites web ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                            Notre processus de conception et de construction de sites web est divisé en plusieurs étapes, notamment la recherche, la planification, la conception, le développement, les tests et le lancement. Nous travaillons en étroite collaboration avec nos clients tout au long du processus pour nous assurer que nous répondons à tous leurs besoins et exigences.
+                        </p>
+                        </div>
+                    </li>
+        
+                    <li data-aos="fade-up" data-aos-delay="300">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Combien de temps cela prend-il pour concevoir et construire un site web ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                            La durée de conception et de construction d'un site web dépend de la taille et de la complexité du projet. Nous nous efforçons de terminer les projets dans les délais impartis convenus avec nos clients, tout en nous assurant que la qualité est maintenue.
+                        </p>
+                        </div>
+                    </li>
+        
+                    <li data-aos="fade-up" data-aos-delay="400">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Quels sont les coûts associés à la conception et à la construction d'un site web ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                            Les coûts associés à la conception et à la construction d'un site web dépendent des besoins et des exigences du client. Nous proposons différents forfaits qui varient en fonction des fonctionnalités et de la complexité du projet. Nous pouvons également créer des offres personnalisées pour répondre aux besoins spécifiques de nos clients.
+                        </p>
+                        </div>
+                    </li>
+        
+                    <li data-aos="fade-up" data-aos-delay="500">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Comment puis-je communiquer avec l'équipe de conception et de construction de sites web ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                            Nous proposons différentes méthodes de communication, notamment le courrier électronique, la messagerie instantanée et les appels vidéo. Nous sommes également disponibles pour des réunions en personne si cela est nécessaire.
+                        </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="600">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-6" class="collapsed">Offrez-vous des services de maintenance et de support pour les sites web que vous avez construits ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-6" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                            Oui, nous offrons des services de maintenance et de support pour les sites web que nous avons construits. Nous proposons différents plans de maintenance et de support pour répondre aux besoins de nos clients.
+                        </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="700">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-7" class="collapsed">Comment puis-je m'assurer que mon site web est optimisé pour les moteurs de recherche ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-7" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                            Nous avons une équipe dédiée à l'optimisation des moteurs de recherche (SEO) qui travaillera avec vous pour garantir que votre site web est optimisé pour les moteurs de recherche. Nous nous assurons que votre site web est facilement repérable par les moteurs de recherche, ce qui peut aider à améliorer votre classement dans les résultats de recherche.
+                        </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="800">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-8" class="collapsed">Comment pouvez-vous connecter les ingénieurs avec les clients ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-8" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                            Nous avons une base de données d'ingénieurs talentueux avec lesquels nous travaillons. Lorsqu'un client a besoin de services d'ingénierie, nous sélectionnons les ingénieurs les plus appropriés pour le projet en fonction des compétences et de l'expérience nécessaires.
+                        </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="900">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-9" class="collapsed">Quels sont les avantages de travailler avec votre entreprise pour la conception et la construction de mon site web ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-9" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                            Notre entreprise propose des services de conception et de construction de sites web professionnels dans une variété de domaines, avec une équipe de talentueux ingénieurs prêts à créer un site web personnalisé pour répondre aux besoins de votre entreprise. En travaillant avec nous, vous pouvez vous attendre à un processus de conception et de construction efficace, une communication claire et régulière, ainsi que des services de maintenance et de support pour assurer le succès continu de votre site web. De plus, nous nous engageons à optimiser votre site web pour les moteurs de recherche, afin de vous aider à attirer un trafic organique et à maximiser votre présence en ligne.
+                        </p>
+                        </div>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </section><!-- Section FAQ Finis -->
+
+        <!-- ======= Section Contact ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Contact</h2>
+                    <p>Contactez-nous si vous souhaitez plus d'informations sur les services proposés par KiFiSo. Nous vous répondrons le plus rapidement possible dans les 24 heures et vous contacterons directement par e-mail ou au numéro de téléphone fourni.</p>
+                </div>
+        
+                <div class="row">
+                    <div class="col-lg-5 d-flex align-items-stretch">
+                    <div class="info">
+                        <div class="address">
+                            <i class="bi bi-geo-alt"></i>
+                            <h4>Location:</h4>
+                            <p>INSA Hauts-de-France, Aulnoy-Lez-Valenciennes, 59300 France</p>
+                        </div>
+        
+                        <div class="email">
+                            <i class="bi bi-envelope"></i>
+                            <h4>Email:</h4>
+                            <p>kifiso-insa@gmail.com</p>
+                        </div>
+        
+                        <div class="phone">
+                            <i class="bi bi-phone"></i>
+                            <h4>Call:</h4>
+                            <p>(+33) 7 99 88 22 79</p>
+                        </div>
+        
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2547.2358464872536!2d3.51252871597462!3d50.32485100428779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2ed11bfed235f%3A0x55341a772648d80a!2sInstitut%20National%20des%20Sciences%20Appliqu%C3%A9es%20Hauts-de-France!5e0!3m2!1svi!2sfr!4v1678052061374!5m2!1svi!2sfr" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+                    </div>
+                    </div>
+        
+                    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                    <form action="{% url 'send_contact' %}" method="post" role="form" class="php-email-form">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="name">Votre nom</label>
+                                <input type="text" name="name" class="form-control" id="name" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="name">Votre email</label>
+                                <input type="email" class="form-control" name="email" id="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Sujet</label>
+                            <input type="text" class="form-control" name="subject" id="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Message</label>
+                            <textarea class="form-control" name="message" rows="10" required></textarea>
+                        </div>
+
+                        <div class="my-3">
+                            <div class="loading">Chargement</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Votre message a été envoyé. Merci!</div>
+                        </div>
+                        <div class="text-center"><button type="submit">Envoyer Message</button></div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Section Contact Finis -->
     </main>
 
 {% endblock content %}

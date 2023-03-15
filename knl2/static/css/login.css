@@ -4,11 +4,10 @@
 body {
     font-family: 'Poppins', sans-serif;
     /* min-height: 100vh; */
-    /* padding: 100px;
-    padding-bottom: 50px; */
+    padding: 100px;
     /* background: linear-gradient(to right, #8e8ed1, #e608ba); */
     background: linear-gradient(to right, #37787e, #37787e);
-    /* text-align: center; */
+    text-align: center;
     align-items: center;
     justify-content: center;
 }
@@ -20,6 +19,7 @@ body {
     border-radius: 10px;
     position: relative;
     margin: 0 auto;
+    margin-top: 15px;
 }
 
 .entrer-form::before {
@@ -74,11 +74,11 @@ body {
     gap: 1.5rem;
 }
 
-.login #div_id_login, .login #div_id_password {
+.login #div_id_username, .login #div_id_password {
     position: relative;
 }
 
-.login #div_id_login label, .login #div_id_password label {
+.login #div_id_username label, .login #div_id_password label {
     position: absolute;
     top: 1rem;
     left: 1.4rem;
@@ -92,7 +92,7 @@ body {
     outline: none;
     background: rgba(255, 255, 255, .3);
     padding: 1rem 1.5rem;
-    padding-left: calc(1rem * 12);
+    padding-left: calc(1rem * 10);
     border-radius: 100px;
     width: 100%;
     transition: background .5s;
@@ -120,7 +120,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: background .5s;
-    margin-top: -30px;
+    /* margin-top: -30px; */
 }
 
 .entrer-form button[type="submit"]:hover {

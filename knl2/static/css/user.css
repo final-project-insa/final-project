@@ -13,8 +13,12 @@ body {
     justify-content: center;
 }
 
+/* Social networks icons */
 h5 a {
-    margin-left: 12px;
+    margin-left: 20px;
+}
+.social-network i {
+    font-size: 23px;
 }
 
 .profile .btn {
@@ -30,7 +34,8 @@ h5 a {
 }
 
 .profile .btn:hover,
-.profile1 .btn:hover {
+.profile1 .btn:hover,
+.profile2 .btn:hover {
     background-color: rgba(0, 0, 0, 0.85);
     cursor: pointer;
 }
@@ -41,29 +46,35 @@ h5 a {
     justify-content: center;
 }
 
-.profile input[type="text"], .profile input[type="password"],
-.profile1 input[type="text"], .profile1 input[type="password"] {
+.profile input[type="text"], .profile input[type="password"], .profile input[type="email"],
+.profile1 input[type="text"], .profile1 input[type="password"], .profile1 input[type="email"],
+.profile2 input[type="text"], .profile2 input[type="password"], .profile2 input[type="email"] {
     border: none;
     outline: none;
     background: rgba(255, 255, 255, .3);
     padding: 1rem 1.5rem;
-    padding-left: calc(1rem * 15);
+    padding-left: calc(1rem * 14);
     border-radius: 100px;
     width: 100%;
     transition: background .5s;
 }
 
 .profile input:focus,
-.profile1 input:focus {
+.profile1 input:focus,
+.profile2 input:focus {
     background: white;
 }
 
-#div_id_name {
+#div_id_name,
+#div_id_email,
+#div_id_username {
     position: relative;
     margin: 20px 0px;
 }
 
-#div_id_name label {
+#div_id_name label,
+#div_id_email label,
+#div_id_username label {
     position: absolute;
     font-weight: 550;
     font-style: italic;
@@ -78,7 +89,7 @@ h5 a {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right bottom, rgba(144, 217, 220, 0.526), rgb(34, 152, 136))
 }
-.info-bg, .info-bg1 {
+.info-bg, .info-bg1, .info-bg2 {
     background: rgba(255, 255, 255, .5);
     border-radius: 15px;
     position: relative;
@@ -90,20 +101,35 @@ h5 a {
     position: absolute;
     inset: 0;
     background: rgba(255, 255, 255, 0.398);
-    transform: rotate(-6deg);
+    transform: rotate(-4deg);
     border-radius: 15px;
     z-index: -1;
 }
 
-.profile .profile-bg {
-    width: 2500px;
-    margin: 0 auto;
-    padding: 10px;
+.profile-bg .info-bg {
+    /* margin: 0 auto; */
+    width: 1300px;
+    
 }
 
 .profile {
-    margin: -50px 0px -120px 132px;
+    margin: -85px 0px -136px 0px;
 }
+
+.profile-image a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.profile-image p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.profile-image {
+    padding: 35px;
+}
+
 /* -------------------- User Form ------------------- */
 .profile-bg1, .info-bg1 {
     margin: 0 auto;
@@ -111,7 +137,7 @@ h5 a {
 }
 
 .profile1 {
-    margin: -140px 0px -187px 0px;
+    margin: -55px 0px -100px 0px;
 }
 
 .info-bg1 {
@@ -126,6 +152,73 @@ h5 a {
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: background .5s;
-    width: 200px;
+    width: 250px;
     margin: 15px 20px 0px 525px;
+}
+
+/* -------------------- Email form ------------------- */
+
+.profile-bg2, .info-bg2 {
+    margin: 0 auto;
+    width: 1400px;
+    /* padding: auto; */
+}
+
+.profile2 {
+    /* margin: 0 -200px; */
+    margin: -43px 0px -92px 0px;
+}
+
+.info-bg2 {
+    padding: 30px 70px;
+}
+
+.profile2 .btn {
+    background: black;
+    color: white;
+    padding: 1rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .5s;
+    width: 210px;
+    margin: 15px 0px 15px 131px;
+}
+
+.profile2 input[type="email"] {
+    padding-left: calc(1rem * 10);
+}
+
+.profile2 button[name="action_send"] {
+    width: 330px;
+}
+
+.profile2 button[name="action_add"] {
+    width: 250px;
+    margin: 15px 0px 0px 514px;
+}
+
+.profile2 #div_id_email {
+    margin: 10px 0 0 0;
+}
+
+.verified {
+    color: #049652;
+    font-weight: 600;
+}
+
+.unverified {
+    color: #0d5984;
+    font-weight: 600;
+    padding: 0 22px;
+}
+
+.primary {
+    color: #e10000;
+    font-weight: 600;
+}
+
+.user-email {
+    font-weight: 500;
+    font-style: italic;
 }

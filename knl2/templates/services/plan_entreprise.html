@@ -1,0 +1,425 @@
+{% load static i18n %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% block title %}Plan Entreprise{% endblock title %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="final project">
+        <meta name="author" content="Emmanuelle Ngan Ha NGUYEN LE">
+
+        <!-- Bootstrap Icon -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <!-- Your stuff: Third-party CSS libraries go here -->
+        <!-- Favicons -->
+        <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/bootstrap-icons/bootstrap-icon.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+        <!-- This file stores project-specific CSS -->
+        <link href="{% static 'css/project.css' %}" rel="stylesheet">
+        {% block css %}
+
+        {% endblock %}
+        <!-- Le javascript
+        ================================================== -->
+        {# Placed at the top of the document so pages load faster with defer #}
+        <!-- Bootstrap JS -->
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <!-- Your stuff: Third-party javascript libraries go here -->
+        <!-- Vendor JS Files -->
+        <script src="{% static 'vendor/aos/aos.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+        <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+        <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
+        <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+        <!-- Template Main JS File -->
+        <script defer src="{% static 'js/project.js' %}"></script>
+        {% block javascript %}
+        
+        {% endblock javascript %}
+    </head>
+
+    <body>
+        <header id="header" class="fixed-top header-inner-pages">
+          <div class="container d-flex align-items-center">
+            <h1 class="logo text me-auto"><a href="{% url 'home' %}">KiFiSo</a></h1>
+            <!-- <a href="{% url 'home' %}" class="logo me-auto"><img src="{% static 'images/logo/logo.png' %}" alt="" class="img-fluid"></a> -->
+            
+            <!-- Uncomment below if you prefer to use an image logo -->
+      
+            <nav id="navbar" class="navbar">
+              <ul>
+                <!-- <li><a class="nav-link scrollto active" href="{% url 'home' %}">Accueil<span class="visually-hidden">(current)</span></a></li>
+                <li><a class="nav-link scrollto" href="{% url 'about' %}">Propos</a></li> -->
+                <li><a class="nav-link scrollto active" href="#hero">Accueil</a></li>
+                <li><a class="nav-link scrollto" href="#about">Propos</a></li>
+                <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+                <li><a class="nav-link scrollto" href="#team">Equipe</a></li>
+                <li class="dropdown"><a href="#"><span>Blog</span> <i class="bi bi-chevron-down"></i></a>
+                  <ul>
+                    <li><a href="https://www.uphf.fr/lamih/membres/ratli_mustapha">Notre tuteur - M.RALTI</a></li>
+                    <li class="dropdown"><a href="https://www.insa-hautsdefrance.fr/"><span>INSA Hauts-de-France</span> <i class="bi bi-chevron-right"></i></a>
+                      <ul>
+                        <li><a href="https://www.insa-hautsdefrance.fr/formation/domaines-formation">Formation</a></li>
+                        <li><a href="https://www.insa-hautsdefrance.fr/international/linternational-linsa-hauts-france">International</a></li>
+                        <li><a href="https://www.uphf.fr/vie-campus/vie-universitaire">Vie des campus</a></li>
+                        <li><a href="https://bu.uphf.fr/opac/.do">Bibliothèquie</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="{% url 'cinema' %}">Cinéma</a></li>
+                    <li><a href="{% url 'ungine_gaming' %}">Gaming Unigine</a></li>
+                  </ul>
+                </li>
+                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
+                {% if request.user.is_authenticated %}
+                    <li>
+                        {# URL provided by django-allauth/account/urls.py #}
+                        <a class="getstarted scrollto" href="{% url 'users:detail' request.user.username  %}">{% translate "Mon Profile" %}</a>
+                    </li>
+                    <li><a class="getstarted scrollto" href="{% url 'logout' %}" onclick="return confirm('Êtes-vous sûr(e) de vouloir vous déconnecter?')">{% translate "Se déconnecter" %}</a></li>
+                {% else %}
+                    {% if ACCOUNT_ALLOW_REGISTRATION %}
+                        <li>
+                            {# URL provided by django-allauth/account/urls.py #}
+                            <a id="sign-up-link" class="getstarted scrollto" href="{% url 'account_signup' %}">{% translate "S'inscrire" %}</a>
+                        </li>
+                    {% endif %}
+                    <li>
+                        {# URL provided by django-allauth/account/urls.py #}
+                        <a id="log-in-link" class="getstarted scrollto" href="{% url 'login' %}">{% translate "Se connecter" %}</a>
+                    </li>
+                {% endif %}
+                <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
+              </ul>
+              <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+          </div>
+        </header><!-- End Header -->
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Notifications</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                    </div>
+
+                    <div class="modal-body">
+                    {% if messages %}
+                        {% for message in messages %}
+                        <div class="alert alert-dismissible {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                            {{ message }}
+                            <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button> -->
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {% block content %}
+            <!-- Use this document as a way to quick start any new project. -->
+            <main id="main">
+                <!-- ======= Breadcrumbs ======= -->
+                <section id="breadcrumbs" class="breadcrumbs">
+                <div class="container">
+                    <ol>
+                    <li><a href="{% url 'home' %}">Accueil</a></li>
+                    <li>Plan Entreprise</li>
+                    </ol>
+                    <h2>Plan Entreprise</h2>
+                </div>
+                </section><!-- Breadcrumbs Finis -->
+        
+                <section class="inner-page">
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="" data-aos="fade-down" data-aos-delay="100">
+                            <h1 style="font-size: 75px; color: #37787e;">Description du Plan Entreprise</h1>
+                        </div>
+                    </div>
+                    <!-- Contenu -->
+                    <div class="row">
+                        <div class="image col-md-4">
+                            <div class=" d-flex align-items-center" data-aos="zoom-in" data-aos-delay="100">
+                                <img src="{% static 'images/img/plan/developer.png' %}" class="img-fluid" alt="" style="width: 400px;">
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 align-items-center text-justify wrapper" data-aos="fade-left" data-aos-delay="400">
+                            <div class="typing-demo1">
+                                <p>
+                                    Le plan Entreprise est destiné aux clients qui ont besoin d'un site web avec des <br>
+                                    fonctionnalités illimitées et d'une bande passante rapide sans publicités. Il permet <br>
+                                    également d'accéder à une version complète à l'API du service, ainsi que des rapports <br>
+                                    détaillés et des fonctionnalités de collaboration pour une expérience de qualité. <br>
+                                </p>
+                                <div class="reservation-button">
+                                    <a class="btn btn-primary pull-right" href="{% url 'payment' %}">Obtenez-le maintenant!</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content" data-aos="fade-in" data-aos-delay="200" style="margin: 20px auto;">
+                            <p>
+                                Avec les informations suivant:
+                                <ul>
+                                    <li><i class="ri-check-double-line"></i> Le plan Entreprise est la solution idéale pour les clients qui ont besoin d'un site web complet avec des fonctionnalités illimitées pour répondre à leurs besoins professionnels.</li>
+                                    <br><li><i class="ri-check-double-line"></i> En choisissant ce plan, vous bénéficiez également d'une bande passante rapide et sans publicités pour offrir une expérience utilisateur fluide à vos visiteurs.</li>
+                                    <br><li><i class="ri-check-double-line"></i> Vous aurez également accès à une version complète de l'API du service, vous permettant de personnaliser et d'ajouter des fonctionnalités supplémentaires à votre site web.</li>
+                                    <br><li><i class="ri-check-double-line"></i> Les rapports détaillés et les fonctionnalités de collaboration ajoutent une dimension de transparence et de communication à l'ensemble du processus de création de site web, permettant ainsi aux clients de suivre l'avancement de leur projet à tout moment et de donner leur avis.</li>
+                                    <br><li><i class="ri-check-double-line"></i> En somme, le plan Entreprise offre une expérience de qualité supérieure pour les entreprises qui cherchent à se démarquer dans leur marché en ligne.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="be-comment-block">
+                        <h1 class="comments-title" data-aos="fade-in" data-aos-delay="200">Commentaires (3)</h1>
+                        <div class="be-comment" data-aos="fade-up" data-aos-delay="200">
+                            <div class="be-img-comment">	
+                                <a href="#">
+                                    <img src="https://img.freepik.com/free-photo/fun-3d-illustration-cartoon-man-with-vr-helmet_183364-80994.jpg?w=900&t=st=1678906171~exp=1678906771~hmac=6ac02cae97050a9915d0c60be4dea6d3327a550a6b8aea2cfbbf3a28ba3ee872" alt="" class="be-ava-comment">
+                                </a>
+                            </div>
+                            <div class="be-comment-content">
+                                <span class="be-comment-name">
+                                    <a href="#">Harry Potter, <b>INSA Hauts-de-France</b></a>
+                                    </span>
+                                <span class="be-comment-time">
+                                    <i class="fa fa-clock-o"></i>
+                                    Mars 19, 2023 at 7:19pm
+                                </span>
+                    
+                                <p class="be-comment-text">
+                                    Le plan entreprise est idéal pour les grandes entreprises qui ont besoin d'un site web avec des fonctionnalités avancées et d'une bande passante rapide sans publicités. Il permet également aux entreprises d'accéder à une version complète de l'API du service pour une intégration plus facile avec d'autres outils et services.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="be-comment" data-aos="fade-up" data-aos-delay="200">
+                            <div class="be-img-comment">	
+                                <a href="#">
+                                    <img src="https://img.freepik.com/free-psd/female-customer-service-3d-cartoon-avatar-portrait_627936-12.jpg?w=900&t=st=1678906453~exp=1678907053~hmac=a738d0b65ebfac224975f040398199c7077e9763c49404ffe3ba3d22c5b0d348" alt="" class="be-ava-comment">
+                                </a>
+                            </div>
+                            <div class="be-comment-content">
+                                <span class="be-comment-name">
+                                    <a href="#">Hermionie Granger, <b>Chanel</b></a>
+                                </span>
+                                <span class="be-comment-time">
+                                    <i class="fa fa-clock-o"></i>
+                                    Mars 17, 2023 at 3:37pm
+                                </span>
+
+                                <p class="be-comment-text">
+                                    Le plan entreprise est une option rentable pour les entreprises qui souhaitent bénéficier d'un site web de haute qualité sans avoir à investir dans la création de leur propre équipe de développement. Les fonctionnalités de collaboration et les rapports détaillés permettent également aux entreprises de suivre les performances de leur site web.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="be-comment" data-aos="fade-up" data-aos-delay="200">
+                            <div class="be-img-comment">	
+                                <a href="#">
+                                    <img src="https://img.freepik.com/free-psd/cool-man-3d-cartoon-avatar-portrait_627936-10.jpg?w=900&t=st=1678906418~exp=1678907018~hmac=2e810266f3eda05bcc64b7f7e3bd4835a872ed47cc01100cefb0e9df904eef59" alt="" class="be-ava-comment">
+                                </a>
+                            </div>
+                            <div class="be-comment-content">
+                                <span class="be-comment-name">
+                                    <a href="#">Draco Malfoy, <b>IBM</b></a>
+                                </span>
+                                <span class="be-comment-time">
+                                    <i class="fa fa-clock-o"></i>
+                                    Mars 17, 2023 at 3:14am
+                                </span>
+                                <p class="be-comment-text">
+                                    Grâce aux fonctionnalités illimitées du plan entreprise, les entreprises peuvent facilement personnaliser leur site web en fonction de leurs besoins spécifiques. De plus, la bande passante rapide garantit que le site web sera toujours accessible aux visiteurs, même lors de pics de trafic importants.
+                                </p>
+                            </div>
+                        </div>
+                        <form class="form-block" data-aos="fade-up" data-aos-delay="200">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="form-group fl_icon">
+                                        <div class="icon"><i class="fa fa-user"></i></div>
+                                        <input class="form-input" type="text" placeholder="Votre nom">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 fl_icon">
+                                    <div class="form-group fl_icon">
+                                        <div class="icon"><i class="fa fa-envelope-o"></i></div>
+                                        <input class="form-input" type="text" placeholder="Votre email">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">									
+                                    <div class="form-group">
+                                        <textarea class="form-input" required="" placeholder="Commentez ici"></textarea>
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary pull-right">Envoyer</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </section>
+            </main>
+        {% endblock content %}
+
+        {% block footer %}
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="footer-newsletter">
+            <div class="container">
+                <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <h4>Rejoignez Notre Newsletter</h4>
+                    <p>Nous vous informerons dès que possible des informations pertinentes de KiFiSo</p>
+                    <form method="post" action="{% url 'send_email' %}" >
+                        {% csrf_token %}
+                        <input type="email" name="email_news"><input type="submit" value="S'abonner">
+                    </form>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>KiFiSo</h3>
+                        <p>
+                            Voirie Communale<br>
+                            INSA Hauts-de-France / UPHF<br>
+                            Aulnoy-Lez-Valenciennes<br>
+                            59300 France <br><br>
+                            <strong>Phone:</strong> (+33) 7 99 88 22 79<br>
+                            <strong>Email:</strong>
+                            <a href = "mailto:kifiso-insa@gmail.com?subject = Feedback & body = Message" style="color: #444444">
+                                kifiso-insa@gmail.com
+                            </a><br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Liens Utiles</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Accueil</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">A propos de nous</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Termes de service</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Politique de confidentialité</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Nos Services</h4>
+                        <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Conception Web</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Développement web</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Gestion du Produit</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Conception Graphique</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Nos Réseaux Sociaux</h4>
+                        <p>Veuillez nous contacter si vous avez besoin de conseils sur les services</p>
+                        <div class="social-links mt-3">
+                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                &copy; Copyright <strong><span>KiFiSo</span></strong>. Tous droits réservés
+            </div>
+            <div class="credits">
+                Dessinée par <a href="#">&nbsp; KiFiSo - INSA</a>
+            </div>
+            </div>
+        </footer><!-- End Footer -->
+        {% endblock footer%}
+        
+        <!-- Back to top -->
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        
+        {% block modal %}{% endblock modal %}
+
+        {% block inline_javascript %}
+            {% comment %}
+                Script tags with only code, no src (defer by default). To run
+                with a "defer" so that you run inline code:
+                <script>
+                    window.addEventListener('DOMContentLoaded', () => {
+                        // Get a reference to the email form
+                        const emailForm = document.getElementById('email-form');
+
+                        // If the form exists
+                        if (emailForm) {
+                            // Add an event listener to the form submit event
+                            emailForm.addEventListener('submit', function(e) {
+                                console.log('Form submitted');
+                                // Prevent the form from being submitted normally
+                                e.preventDefault();
+
+                                // Send the form data using an AJAX request
+                                fetch(emailForm.action, {
+                                    method: emailForm.method,
+                                    body: new FormData(emailForm)
+                                })
+                                .then(response => {
+                                    console.log(response);
+                                    if (response.ok) { // If the request was successful
+                                        // Hide the form
+                                        emailForm.style.display = 'none';
+
+                                        // Show the modal
+                                        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
+                                        myModal.show();
+                                        console.log(message);
+                                    }
+                                })
+                                .catch(error => console.error(error));
+                            });
+                        }
+                    });
+                </script>
+            {% endcomment %}
+        {% endblock inline_javascript %}
+        <div id="preloader"></div>
+    </body>
+</html>
