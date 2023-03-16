@@ -8,8 +8,6 @@ from users.views import SendEmailView, CustomLoginView, CustomLogoutView, send_e
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework.authtoken.views import obtain_auth_token
 
-from django.views.static import serve
-from django.conf.urls import url
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
@@ -37,8 +35,6 @@ urlpatterns = [
     path("send_email/", SendEmailView, name="send_email"),
     path("send_contact/", send_email, name="send_contact"),
     # path("accounts/email/", account_email, name="account_email")
-    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
